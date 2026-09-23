@@ -1,4 +1,29 @@
-console.log("HELLO WORLD");
+function getSquareNumbers(numbers: number[]) {
+    const newArray = [];
+
+    for (const ele of numbers) {
+        newArray.push({
+            number: ele,
+            square: ele * ele
+        });
+    }
+
+    return newArray;
+}
+
+const array1 = getSquareNumbers([3, 4, 6, 7, 9]);
+
+console.log("Array1:", array1);
+
+
+const array2 = getSquareNumbers([0, 1, 4, 2, 10]);
+
+console.log("Array2:", array2);
+
+
+
+
+// PYTHON VERSION
 // MIT TASK M
 // def getSquareNumbers(numbers):
 //     new_array = []
