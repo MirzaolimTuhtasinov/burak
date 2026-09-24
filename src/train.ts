@@ -1,24 +1,43 @@
-function getSquareNumbers(numbers: number[]) {
-    const newArray = [];
+// MIT TASK N
 
-    for (const ele of numbers) {
-        newArray.push({
-            number: ele,
-            square: ele * ele
-        });
-    }
-
-    return newArray;
+function palindromCheck(word: string) {
+    const new_word = word.split("");
+    const b = String(new_word.reverse().join(""));
+    if(word === b) return true; else return false
 }
-
-const array1 = getSquareNumbers([3, 4, 6, 7, 9]);
-
-console.log("Array1:", array1);
+const a = palindromCheck("1234321");
+console.log(a)
 
 
-const array2 = getSquareNumbers([0, 1, 4, 2, 10]);
 
-console.log("Array2:", array2);
+
+
+
+
+
+
+// // MIT TASK M
+// function getSquareNumbers(numbers: number[]) {
+//     const newArray = [];
+
+//     for (const ele of numbers) {
+//         newArray.push({
+//             number: ele,
+//             square: ele * ele
+//         });
+//     }
+
+//     return newArray;
+// }
+
+// const array1 = getSquareNumbers([3, 4, 6, 7, 9]);
+
+// console.log("Array1:", array1);
+
+
+// const array2 = getSquareNumbers([0, 1, 4, 2, 10]);
+
+// console.log("Array2:", array2);
 
 
 
