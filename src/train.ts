@@ -1,12 +1,15 @@
-// MIT TASK N
-
-function palindromCheck(word: string) {
-    const new_word = word.split("");
-    const b = String(new_word.reverse().join(""));
-    if(word === b) return true; else return false
+// MIT TASK O
+function calculateSumOfNumbers(numbers: any[]) {
+    let count: number = 0;
+    for(const ele of numbers ) {
+        // console.log(typeof(ele));
+        if(typeof(ele) === 'number') count += ele;
+    }
+    return count
 }
-const a = palindromCheck("1234321");
-console.log(a)
+
+const result1 = calculateSumOfNumbers([10, "10", {son: 10}, true, 23]);
+console.log("Result1:", result1)
 
 
 
@@ -14,7 +17,15 @@ console.log(a)
 
 
 
+// // MIT TASK N
 
+// function palindromCheck(word: string) {
+//     const new_word = word.split("");
+//     const b = String(new_word.reverse().join(""));
+//     if(word === b) return true; else return false
+// }
+// const a = palindromCheck("1234321");
+// console.log(a)
 
 // // MIT TASK M
 // function getSquareNumbers(numbers: number[]) {
@@ -34,13 +45,9 @@ console.log(a)
 
 // console.log("Array1:", array1);
 
-
 // const array2 = getSquareNumbers([0, 1, 4, 2, 10]);
 
 // console.log("Array2:", array2);
-
-
-
 
 // PYTHON VERSION
 // MIT TASK M
@@ -50,10 +57,8 @@ console.log(a)
 //         new_array.append({f"number: {ele}, square: {ele * ele}"})
 //     return new_array
 
-
 // array1 = getSquareNumbers([3, 4, 6, 7, 9])
 // print("Array1:", array1)
-
 
 // MIT TASK L
 // def reverseSentence(sentence):
@@ -66,10 +71,8 @@ console.log(a)
 
 //     return " ".join(new_array)
 
-
 // result = reverseSentence('we like python!')
 // print("Result:", result)
-
 
 // def reverseSentence2(input):
 //     new_array = []
@@ -80,7 +83,6 @@ console.log(a)
 //         new_array.append(final_ele)
 
 //     return " ".join(new_array)
-
 
 // result2 = reverseSentence2("we like coding!")
 // print("Result2:", result2)
