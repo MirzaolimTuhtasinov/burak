@@ -1,21 +1,56 @@
-// MIT TASK O
-function calculateSumOfNumbers(numbers: any[]) {
-    let count: number = 0;
-    for(const ele of numbers ) {
-        // console.log(typeof(ele));
-        if(typeof(ele) === 'number') count += ele;
-    }
-    return count
+// MIT TASK P
+function objectToArray(object: any) {
+    return Object.entries(object);
 }
 
-const result1 = calculateSumOfNumbers([10, "10", {son: 10}, true, 23]);
-console.log("Result1:", result1)
+const result1 = objectToArray({ a: 10, b: 20, c: 30 });
+
+console.log(result1);
+
+
+function objectToArray1(object: object) {
+    const array = [];
+    const keys = Object.keys(object);
+    const values = Object.values(object);
+
+    for (let i = 0; i < keys.length; i++) {
+        array.push([keys[i], values[i]]);
+    }
+
+    return array;
+}
+
+const result2 = objectToArray({ a: 10, b: 20, c: 30 });
+
+console.log(result2);
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+// // MIT TASK O
+// function calculateSumOfNumbers(numbers: any[]) {
+//     let count: number = 0;
+//     for(const ele of numbers ) {
+//         // console.log(typeof(ele));
+//         if(typeof(ele) === 'number') count += ele;
+//     }
+//     return count
+// }
+
+// const result1 = calculateSumOfNumbers([10, "10", {son: 10}, true, 23]);
+// console.log("Result1:", result1)
 
 // // MIT TASK N
 
