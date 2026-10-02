@@ -1,28 +1,13 @@
-// MIT TASK P
-function objectToArray(object: any) {
-    return Object.entries(object);
+// MIT TASK Q
+function hasProperty(input1: any, input2: any) {
+    return input2 in input1;
 }
 
-const result1 = objectToArray({ a: 10, b: 20, c: 30 });
+const a = hasProperty({ age: 30 }, "age");
+const b = hasProperty({ age: 30 }, "name");
 
-console.log(result1);
-
-
-function objectToArray1(object: object) {
-    const array = [];
-    const keys = Object.keys(object);
-    const values = Object.values(object);
-
-    for (let i = 0; i < keys.length; i++) {
-        array.push([keys[i], values[i]]);
-    }
-
-    return array;
-}
-
-const result2 = objectToArray({ a: 10, b: 20, c: 30 });
-
-console.log(result2);
+console.log("a:", a);
+console.log("b:", b);
 
 
 
@@ -30,14 +15,30 @@ console.log(result2);
 
 
 
+// // MIT TASK P
+// function objectToArray(object: any) {s
+//     return Object.entries(object);
+// }
 
+// const result1 = objectToArray({ a: 10, b: 20, c: 30 });
 
+// console.log(result1);
 
+// function objectToArray1(object: object) {
+//     const array = [];
+//     const keys = Object.keys(object);
+//     const values = Object.values(object);
 
+//     for (let i = 0; i < keys.length; i++) {
+//         array.push([keys[i], values[i]]);
+//     }
 
+//     return array;
+// }
 
+// const result2 = objectToArray({ a: 10, b: 20, c: 30 });
 
-
+// console.log(result2);
 
 // // MIT TASK O
 // function calculateSumOfNumbers(numbers: any[]) {
