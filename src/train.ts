@@ -1,19 +1,63 @@
-// MIT TASK Q
-function hasProperty(input1: any, input2: any) {
-    return input2 in input1;
+// MIT TASK R
+
+function calculate(input: string) {
+    let total = 0;
+
+    const numbers = input.split("+");
+
+    for (const number of numbers) {
+        total += Number(number);
+    }
+
+    return total;
 }
 
-const a = hasProperty({ age: 30 }, "age");
-const b = hasProperty({ age: 30 }, "name");
+const a = calculate("6 + 5 + 2");
 
 console.log("a:", a);
-console.log("b:", b);
+
+// function calculate(input: any) {
+//     let total = 0;
+
+//     for (const ele of input.split("+")) {
+//         const num = Number(ele.trim());
+
+//         if (!isNaN(num)) {
+//             total += num;
+//         }
+//     }
+
+//     return total;
+// }
+
+// const a = calculate("61 + 5 + 2");
+// console.log("a:", a);
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+// // MIT TASK Q
+// function hasProperty(input1: any, input2: any) {
+//     return input2 in input1;
+// }
+
+// const a = hasProperty({ age: 30 }, "age");
+// const b = hasProperty({ age: 30 }, "name");
+
+// console.log("a:", a);
+// console.log("b:", b);
 
 // // MIT TASK P
 // function objectToArray(object: any) {s
