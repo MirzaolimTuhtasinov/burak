@@ -1,20 +1,53 @@
-// MIT TASK R
-
-function calculate(input: string) {
-    let total = 0;
-
-    const numbers = input.split("+");
-
-    for (const number of numbers) {
-        total += Number(number);
+// MIT TASK S 
+function missingNumber(nums: number[]): number {
+    for (let i = 0; i <= nums.length; i++) {
+        if (!nums.includes(i)) {
+            return i;
+        }
     }
 
-    return total;
+    return -1;
 }
 
-const a = calculate("6 + 5 + 2");
+const a = missingNumber([0, 1, 3]);
+console.log("A:", a)
 
-console.log("a:", a);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // MIT TASK R
+
+// function calculate(input: string) {
+//     let total = 0;
+
+//     const numbers = input.split("+");
+
+//     for (const number of numbers) {
+//         total += Number(number);
+//     }
+
+//     return total;
+// }
+
+// const a = calculate("6 + 5 + 2");
+
+// console.log("a:", a);
 
 // function calculate(input: any) {
 //     let total = 0;
@@ -32,21 +65,6 @@ console.log("a:", a);
 
 // const a = calculate("61 + 5 + 2");
 // console.log("a:", a);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // // MIT TASK Q
 // function hasProperty(input1: any, input2: any) {
