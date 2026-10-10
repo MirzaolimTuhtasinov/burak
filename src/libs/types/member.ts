@@ -1,4 +1,4 @@
-import { MemberType } from "../enums/member.enum";
+import { MemberType, MemberStatus } from "../enums/member.enum";
 import {ObjectId} from 'mongoose'
 import { Request } from "express";
 import { Session } from "express-session";
@@ -6,7 +6,7 @@ import { Session } from "express-session";
 export interface Member {
   _id: ObjectId;  
   memberType: MemberType;
-  memberStatus: MemberType;
+  memberStatus: MemberStatus;
   memberNick: string;
   memberPhone: string;
   memberPassword?: string;
