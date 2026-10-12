@@ -1,16 +1,11 @@
-// MIT TASK S 
-function missingNumber(nums: number[]): number {
-    for (let i = 0; i <= nums.length; i++) {
-        if (!nums.includes(i)) {
-            return i;
-        }
-    }
-
-    return -1;
+// MIT TASK T
+function mergeSortedArrays (array1: number[], array2: number[]): number[]{
+    const new_array = array1.concat(array2);
+    return new_array.sort((a, b) => a - b);
 }
 
-const a = missingNumber([0, 1, 3]);
-console.log("A:", a)
+const a = mergeSortedArrays([4,10, 0], [4,9,7]);
+console.log('a:', a)
 
 
 
@@ -26,10 +21,19 @@ console.log("A:", a)
 
 
 
+// // MIT TASK S
+// function missingNumber(nums: number[]): number {
+//     for (let i = 0; i <= nums.length; i++) {
+//         if (!nums.includes(i)) {
+//             return i;
+//         }
+//     }
 
+//     return -1;
+// }
 
-
-
+// const a = missingNumber([0, 1, 3]);
+// console.log("A:", a)
 
 // // MIT TASK R
 
