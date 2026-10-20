@@ -1,11 +1,16 @@
-// MIT TASK T
-function mergeSortedArrays (array1: number[], array2: number[]): number[]{
-    const new_array = array1.concat(array2);
-    return new_array.sort((a, b) => a - b);
+// MIT TASK V
+
+function countChars(word: string) {
+    const result: Record<string, number> = {};
+
+    for (const char of word) {
+        result[char] = (result[char] || 0) + 1;
+    }
+
+    return result;
 }
 
-const a = mergeSortedArrays([4,10, 0], [4,9,7]);
-console.log('a:', a)
+console.log(countChars("23h el lo11"));
 
 
 
@@ -20,6 +25,20 @@ console.log('a:', a)
 
 
 
+
+
+
+
+
+
+// // MIT TASK T
+// function mergeSortedArrays (array1: number[], array2: number[]): number[]{
+//     const new_array = array1.concat(array2);
+//     return new_array.sort((a, b) => a - b);
+// }
+
+// const a = mergeSortedArrays([4,10, 0], [4,9,7]);
+// console.log('a:', a)
 
 // // MIT TASK S
 // function missingNumber(nums: number[]): number {
