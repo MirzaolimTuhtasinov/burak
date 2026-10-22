@@ -1,16 +1,17 @@
-// MIT TASK V
+// MIT TASK W
 
-function countChars(word: string) {
-    const result: Record<string, number> = {};
+function chunkArray(array: any[], size: number) {
+  const result = [];
 
-    for (const char of word) {
-        result[char] = (result[char] || 0) + 1;
-    }
+  for (let i = 0; i < array.length; i += size) {
+    result.push(array.slice(i, i + size));
+  }
 
-    return result;
+  return result;
 }
 
-console.log(countChars("23h el lo11"));
+console.log(chunkArray([1, 2, 3, 4, 5, 7, 9], 2));
+// [[1, 2], [3, 4], [5]]
 
 
 
@@ -30,6 +31,20 @@ console.log(countChars("23h el lo11"));
 
 
 
+
+// // MIT TASK V
+
+// function countChars(word: string) {
+//     const result: Record<string, number> = {};
+
+//     for (const char of word) {
+//         result[char] = (result[char] || 0) + 1;
+//     }
+
+//     return result;
+// }
+
+// console.log(countChars("23h el lo11"));
 
 // // MIT TASK T
 // function mergeSortedArrays (array1: number[], array2: number[]): number[]{
