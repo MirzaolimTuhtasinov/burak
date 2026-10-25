@@ -1,17 +1,21 @@
-// MIT TASK W
+// MIT TASK X
+function countOccurrences(obj: any, key: any) {
+    let count = 0;
 
-function chunkArray(array: any[], size: number) {
-  const result = [];
+    for (let k in obj) {
+        if (k === key) {
+            count++;
+        }
 
-  for (let i = 0; i < array.length; i += size) {
-    result.push(array.slice(i, i + size));
-  }
+        if (typeof obj[k] === "object" && obj[k] !== null) {
+            count += countOccurrences(obj[k], key);
+        }
+    }
 
-  return result;
+    return count;
 }
 
-console.log(chunkArray([1, 2, 3, 4, 5, 7, 9], 2));
-// [[1, 2], [3, 4], [5]]
+console.log(countOccurrences({ model: "A", s: { model: "B", d: {model: "C"} } }, "model"));
 
 
 
@@ -31,6 +35,22 @@ console.log(chunkArray([1, 2, 3, 4, 5, 7, 9], 2));
 
 
 
+
+
+// // MIT TASK W
+
+// function chunkArray(array: any[], size: number) {
+//   const result = [];
+
+//   for (let i = 0; i < array.length; i += size) {
+//     result.push(array.slice(i, i + size));
+//   }
+
+//   return result;
+// }
+
+// console.log(chunkArray([1, 2, 3, 4, 5, 7, 9], 2));
+// // [[1, 2], [3, 4], [5]]
 
 // // MIT TASK V
 
