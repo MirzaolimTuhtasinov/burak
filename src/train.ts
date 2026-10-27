@@ -1,21 +1,23 @@
-// MIT TASK X
-function countOccurrences(obj: any, key: any) {
-    let count = 0;
-
-    for (let k in obj) {
-        if (k === key) {
-            count++;
-        }
-
-        if (typeof obj[k] === "object" && obj[k] !== null) {
-            count += countOccurrences(obj[k], key);
-        }
-    }
-
-    return count;
+// MIT TASK Y
+function findIntersection(arr1: number[], arr2: number[]) {
+    return arr1.filter(num => arr2.includes(num));
 }
 
-console.log(countOccurrences({ model: "A", s: { model: "B", d: {model: "C"} } }, "model"));
+// function findIntersection(arr1: number[], arr2: number[]) {
+//     let output= [];
+//     const new_array = arr1.concat(arr2);
+//     new_array.sort((a, b) => a - b);
+//     console.log("new_array:", new_array)
+
+//     for(let i = 0; i < new_array.length; i++) {
+//         if(new_array[i] === new_array[i+1]) {
+//             output.push(new_array[i])
+//         }
+//     }
+//     return output;
+// }
+ const a = findIntersection([2,4,6, 7, 11], [3, 4, 5, 7, 9, 12, 11 ]);
+ console.log(a)
 
 
 
@@ -35,7 +37,24 @@ console.log(countOccurrences({ model: "A", s: { model: "B", d: {model: "C"} } },
 
 
 
+// MIT TASK X
+// function countOccurrences(obj: any, key: any) {
+//     let count = 0;
 
+//     for (let k in obj) {
+//         if (k === key) {
+//             count++;
+//         }
+
+//         if (typeof obj[k] === "object" && obj[k] !== null) {
+//             count += countOccurrences(obj[k], key);
+//         }
+//     }
+
+//     return count;
+// }
+
+// console.log(countOccurrences({ model: "A", s: { model: "B", d: {model: "C"} } }, "model"));
 
 // // MIT TASK W
 
