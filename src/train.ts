@@ -1,7 +1,41 @@
-// MIT TASK Y
-function findIntersection(arr1: number[], arr2: number[]) {
-    return arr1.filter(num => arr2.includes(num));
+// MIT TASK Z
+function sumEvens(nums: number[]) {
+    let sum = 0;
+    for(const ele of nums) {
+        if(Number.isInteger(ele/2)) {
+            sum += ele;
+        }
+        // if (ele % 2 === 0) {
+        //     sum += ele;
+        // }
+    }
+    return sum;
 }
+
+const a = sumEvens([1, 2, 3, 4, 5, 6, 7, 8, 12]);
+console.log("A:", a)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // MIT TASK Y
+// function findIntersection(arr1: number[], arr2: number[]) {
+//     return arr1.filter(num => arr2.includes(num));
+// }
 
 // function findIntersection(arr1: number[], arr2: number[]) {
 //     let output= [];
@@ -16,26 +50,8 @@ function findIntersection(arr1: number[], arr2: number[]) {
 //     }
 //     return output;
 // }
- const a = findIntersection([2,4,6, 7, 11], [3, 4, 5, 7, 9, 12, 11 ]);
- console.log(a)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//  const a = findIntersection([2,4,6, 7, 11], [3, 4, 5, 7, 9, 12, 11 ]);
+//  console.log(a)
 
 // MIT TASK X
 // function countOccurrences(obj: any, key: any) {
