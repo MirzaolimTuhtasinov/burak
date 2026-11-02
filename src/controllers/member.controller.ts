@@ -3,17 +3,20 @@ import {T} from '../libs/types/common';
 import { MemberInput, LoginInput, Member } from '../libs/types/member';
 import MemberService from '../models/Member.service';
 import Errors from '../libs/Errors';
+import AuthService from '../models/Auth.service.model';
 
 const memberService = new MemberService(),
-    memberController: T = {};
+    memberController: T = {},
+    authService = new AuthService();
 
 memberController.signup = async (req: Request, res: Response) => {
   try {
     console.log("signup");
 
     const input: MemberInput = req.body,
-        result: Member = await memberService.signup(input);
-    // TODO: Tokens AUTHENTICATION
+        result: Member = await memberService.signup(input),
+        token = await authService.createToken(result);
+    console.log("token sign up => ", token);
     res.json({member: result});
   } catch (err) {
     console.log("ERROR, signup:", err);
@@ -26,16 +29,16 @@ memberController.login = async (req: Request, res: Response) => {
   try {
     console.log("login");
     const input: LoginInput = req.body,
-        result = await memberService.login(input);
-    // TODO: Tokens AUTHENTICATION
+      result = await memberService.login(input),
+      token = await authService.createToken(result);
+    console.log("token =>", token);
 
-    res.json({member: result});
+    res.json({ member: result });
   } catch (err) {
-    console.log("ERROR, signup:", err);
-    if(err instanceof Errors ) res.status(err.code).json(err);
+    console.log("Error, login:", err);
+    if (err instanceof Errors) res.status(err.code).json(err);
     else res.status(Errors.standard.code).json(Errors.standard);
   }
 };
-
 
 export default memberController;
