@@ -1,26 +1,32 @@
-import { Request, Response } from 'express';
-import {T} from '../libs/types/common';
-import { MemberInput, LoginInput, Member } from '../libs/types/member';
-import MemberService from '../models/Member.service';
-import Errors from '../libs/Errors';
-import AuthService from '../models/Auth.service.model';
+import { Request, Response } from "express";
+import { T } from "../libs/types/common";
+import { MemberInput, LoginInput, Member } from "../libs/types/member";
+import MemberService from "../models/Member.service";
+import Errors, { HttpCode } from "../libs/Errors";
+import AuthService from "../models/Auth.service.model";
+import { AUTH_TIMER } from "../libs/config";
 
 const memberService = new MemberService(),
-    memberController: T = {},
-    authService = new AuthService();
+  memberController: T = {},
+  authService = new AuthService();
 
 memberController.signup = async (req: Request, res: Response) => {
   try {
     console.log("signup");
 
     const input: MemberInput = req.body,
-        result: Member = await memberService.signup(input),
-        token = await authService.createToken(result);
-    console.log("token sign up => ", token);
-    res.json({member: result});
+      result: Member = await memberService.signup(input),
+      token = await authService.createToken(result);
+
+    res.cookie("accessToken", token, {
+      maxAge: AUTH_TIMER * 3600 * 1000,
+      httpOnly: false,
+    });
+
+    res.status(HttpCode.CREATED).json({ member: result, accessToken: token });
   } catch (err) {
     console.log("ERROR, signup:", err);
-    if(err instanceof Errors ) res.status(err.code).json(err);
+    if (err instanceof Errors) res.status(err.code).json(err);
     else res.status(Errors.standard.code).json(Errors.standard);
   }
 };
@@ -31,9 +37,13 @@ memberController.login = async (req: Request, res: Response) => {
     const input: LoginInput = req.body,
       result = await memberService.login(input),
       token = await authService.createToken(result);
-    console.log("token =>", token);
 
-    res.json({ member: result });
+    res.cookie("accessToken", token, {
+      maxAge: AUTH_TIMER * 3600 * 1000,
+      httpOnly: false,
+    });
+
+    res.status(HttpCode.OK).json({ member: result, accessToken: token });
   } catch (err) {
     console.log("Error, login:", err);
     if (err instanceof Errors) res.status(err.code).json(err);
