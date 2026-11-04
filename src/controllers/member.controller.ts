@@ -89,7 +89,8 @@ memberController.retriveAuth = async (
 memberController.logout = (req: ExtendednRequest, res: Response) => {
   try{
     console.log("logout");
-    res.cookie("accessToken", null, { maxAge: 0, httpOnly: true });
+    res.cookie("accessToken", "", { maxAge: 0, httpOnly: true });
+    // res.clearCookie("accessToken");
     res.status(HttpCode.OK).json({ logout: true });
   } catch(err) {
     console.log("Error, logout:", err);
