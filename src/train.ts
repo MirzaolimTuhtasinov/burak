@@ -1,36 +1,52 @@
-// MIT TASK Z
-function sumEvens(nums: number[]) {
-    let sum = 0;
-    for(const ele of nums) {
-        if(Number.isInteger(ele/2)) {
-            sum += ele;
+// Leet code
+const twoSum = function(nums: number[], target: number) {
+    for (let i = 0; i < nums.length; i++) {
+        for (let j = i + 1; j < nums.length; j++) {
+            if (nums[i] + nums[j] === target) {
+                return [i, j];
+            }
         }
-        // if (ele % 2 === 0) {
-        //     sum += ele;
-        // }
     }
-    return sum;
-}
+};
+// const twoSum = function(nums: number[], target: number): number[] {
+//     const map = new Map<number, number>();
 
-const a = sumEvens([1, 2, 3, 4, 5, 6, 7, 8, 12]);
-console.log("A:", a)
+//     for (let i = 0; i < nums.length; i++) {
+//         const complement = target - nums[i];
 
+//         if (map.has(complement)) {
+//             return [map.get(complement)!, i];
+//         }
 
+//         map.set(nums[i], i);
+//     }
+// };
 
-
-
-
-
-
-
-
-
-
-
-
+const a = twoSum([3, 2, 4, 5], 7);
+console.log("A:", a);
 
 
 
+
+
+
+
+// // MIT TASK Z
+// function sumEvens(nums: number[]) {
+//     let sum = 0;
+//     for(const ele of nums) {
+//         if(Number.isInteger(ele/2)) {
+//             sum += ele;
+//         }
+//         // if (ele % 2 === 0) {
+//         //     sum += ele;
+//         // }
+//     }
+//     return sum;
+// }
+
+// const a = sumEvens([1, 2, 3, 4, 5, 6, 7, 8, 12]);
+// console.log("A:", a)
 
 // // MIT TASK Y
 // function findIntersection(arr1: number[], arr2: number[]) {
