@@ -28,7 +28,7 @@ export interface MemberInput {
   memberAddress?: string;
   memberDesc?: string;
   memberImage?: string;
-  memberPoitns?: number;
+  memberPoints?: number;
 }
 
 export interface LoginInput {
@@ -38,7 +38,7 @@ export interface LoginInput {
 
 export interface MemberUpdateInput {
   _id: ObjectId;
-  memberStatus?: MemberType;
+  memberStatus?: MemberStatus;
   memberNick?: string;
   memberPhone?: string;
   memberPassword?: string;
