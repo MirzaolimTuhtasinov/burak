@@ -13,7 +13,7 @@ export interface Member {
   memberAddress?: string;
   memberDesc?: string;
   memberImage?: string;
-  memberPoitns: number;
+  memberPoints: number;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -54,7 +54,7 @@ export interface AdminRequest extends Request {
   files: Express.Multer.File[];
 };
 
-export interface ExtendednRequest extends Request {
+export interface ExtendedRequest extends Request {
   member: Member;
   file: Express.Multer.File;
   files: Express.Multer.File[];
