@@ -1,5 +1,5 @@
 import { MemberType, MemberStatus } from "../enums/member.enum";
-import {ObjectId} from 'mongoose'
+import {ObjectId} from 'mongoose';
 import { Request } from "express";
 import { Session } from "express-session";
 
