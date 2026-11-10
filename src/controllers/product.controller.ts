@@ -27,7 +27,7 @@ productController.getProducts = async (req: Request, res: Response) => {
 
     const result = await productService.getProducts(inquiry);
 
-    res.status(HttpCode.OK).json({ result: result })
+    res.status(HttpCode.OK).json(result)
   } catch (err) {
     console.log("ERROR, getProducts:", err);
     if (err instanceof Errors) res.status(err.code).json(err);
